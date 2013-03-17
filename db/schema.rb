@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130317223920) do
+ActiveRecord::Schema.define(:version => 20130317233716) do
+
+  create_table "emails", :force => true do |t|
+    t.string   "to"
+    t.string   "from"
+    t.string   "subject"
+    t.text     "body"
+    t.integer  "mail_merge_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "emails", ["mail_merge_id"], :name => "index_emails_on_mail_merge_id"
 
   create_table "mail_merges", :force => true do |t|
     t.text     "data"
