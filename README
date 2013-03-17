@@ -1,4 +1,19 @@
-RECIPES
+Happy To
+========================
+
+This application was generated with the rails_apps_composer gem:
+https://github.com/RailsApps/rails_apps_composer
+provided by the RailsApps Project:
+http://railsapps.github.com/
+
+________________________
+
+Recipes:
 ["controllers", "core", "email", "extras", "frontend", "gems", "git", "init", "models", "prelaunch", "railsapps", "readme", "routes", "saas", "setup", "testing", "views"]
-PREFERENCES
-{:git=>true, :railsapps=>"none", :dev_webserver=>"webrick", :database=>"sqlite", :templates=>"erb", :unit_test=>"rspec", :integration=>"rspec-capybara", :fixtures=>"factory_girl", :frontend=>"foundation", :email=>"gmail", :authentication=>"none", :authorization=>"none", :form_builder=>"none", :starter_app=>"none"}
+
+Preferences:
+{:git=>true, :railsapps=>"none", :dev_webserver=>"webrick", :database=>"sqlite", :templates=>"erb", :unit_test=>"rspec", :integration=>"rspec-capybara", :fixtures=>"factory_girl", :frontend=>"foundation", :email=>"gmail", :authentication=>"none", :authorization=>"none", :form_builder=>"none", :starter_app=>"none", :rvmrc=>true, :quiet_assets=>true, :better_errors=>true, :jsruntime=>false, :github=>true}
+
+________________________
+
+License
