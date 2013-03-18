@@ -22,17 +22,24 @@ APP = {
                        callback: APP.mail_merges.display,
                        simpleSheet: true } );
       });
+
+      $("#mail_merge_body_template").keyup(
+        APP.mail_merges.updatePreview);
     },
     'display': function(data, tabletop) {
       if (!data || data.length === 0) {
         alert("No spreadsheet found. Please make sure it's published.");
       }
       else {
+        APP.google_spreadsheet_data = data;
         $("#mail_merge_data").val(JSON.stringify(data));
 
         var table = $("#pulled_data");
         var thead = table.find("thead");
         var tbody = table.find("tbody");
+        
+        thead.find("th").remove();
+        tbody.find("tr").remove();
 
         for (var key in data[0]) {
           thead.append("<th>" + key + "</th");
@@ -48,6 +55,12 @@ APP = {
 
         table.slideDown();
       }
+    },
+    'updatePreview': function() {
+      var template = $("#mail_merge_body_template").val();
+      var message = Mustache.render(template, 
+                                    APP.google_spreadsheet_data[0]);
+      $("#preview").html(message);
     }
   },
 }
