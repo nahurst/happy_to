@@ -41,10 +41,8 @@ receives (columns should be lower case).
 1. Enter a body template. You may use any column name as a Mustache template variable. Ex:
 
         <p>Hi {{name}},</p>
-        <p>I'm happy to tell you I'm using HappyTo to send an email to
-you at {{email}}.</p>
-        <p>It was great to see you in your movie, {{movie}}. Gotta love
-the 90s!</p>
+        <p>I'm happy to tell you I'm using HappyTo to send an email to you at {{email}}.</p>
+        <p>It was great to see you in your movie, {{movie}}. Gotta love the 90s!</p>
 
 Kazaam! Your emails are sent.
 
