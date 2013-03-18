@@ -12,6 +12,8 @@ So, what does HappyTo do then? I'd be happy to tell you. Basically, all
 of those things. Remember the days of mail merge? It's that, but with
 Gmail and Google Spreadsheets.
 
+![HappyTo Screenshot](/app/assets/images/happy_to_screenshot.png "HappyTo Screenshot")
+
 You just:
 
 1. Create a Google Spreadsheet with at least an "email" column. You can
