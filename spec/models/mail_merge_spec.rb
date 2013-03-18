@@ -4,6 +4,8 @@ describe MailMerge do
   describe 'email generation' do
 
     it 'should generate emails for a complete mail merge' do
+      ActionMailer::Base.deliveries.clear
+
       mm = create(:mail_merge)
       mm.emails.length.should == 4
 

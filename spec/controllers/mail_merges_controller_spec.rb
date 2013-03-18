@@ -71,6 +71,7 @@ describe MailMergesController do
       end
 
       it "assigns a newly created mail_merge as @mail_merge" do
+        ActionMailer::Base.deliveries.clear
         post :create, {:mail_merge => valid_attributes}, valid_session
         assigns(:mail_merge).should be_a(MailMerge)
         assigns(:mail_merge).should be_persisted
