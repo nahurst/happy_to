@@ -12,6 +12,9 @@
  *= require foundation_and_overrides
  *= require_tree .
 */
+
+@import "foundation";
+
 .brand {
   float: left;
   padding-right: 8px;
@@ -35,4 +38,19 @@ ul.nav li {
 #flash_alert {
   background-color: #FCC;
   border: solid 1px #C66;
+}
+.container {
+}
+header {
+  background-color: $primary-color;
+  padding-top: 5px;
+  border-bottom: 5px solid $shiny-edge-color;
+  div { @include grid-row(); }
+  h3 a, h3 a:hover { color: white; text-shadow: 1px 1px 0 #666; }
+}
+#main {
+  @include grid-row();
+}
+#footer {
+  @include grid-row();
 }

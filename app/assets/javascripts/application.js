@@ -14,6 +14,12 @@ APP = {
     },
   },
   mail_merges: {
+    'show': function() {
+      $(".edit_mail_merge input").attr("disabled", "disabled");
+      $(".edit_mail_merge textarea").attr("disabled", "disabled");
+      var data = $.parseJSON($("#mail_merge_data").val());
+      APP.mail_merges.display(data);
+    },
     'new': function() {
       $("#pull").click(function(e) {
         e.preventDefault();

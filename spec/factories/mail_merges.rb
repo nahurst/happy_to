@@ -6,6 +6,7 @@ FactoryGirl.define do
       {'email' => 'michaelangello@example.com', 'name' => 'Michaelangello', 'company' => 'TMNT'},
       {'email' => 'raphael@example.com', 'name' => 'Raphael', 'company' => 'TMNT'}
     ].to_json
+    from "splinter@example.com"
     subject_template "Great to see you {{name}}"
     body_template "Hi {{name}}\nIt was great to see you at the {{company}} party!"
   end

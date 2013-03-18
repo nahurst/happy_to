@@ -1,3 +1,29 @@
-// Place all the styles related to the MailMerge controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "foundation";
+
+body[data-controller="mail_merges"] {
+
+  #pulled_data {
+    @include grid-row();
+    margin-bottom: 15px;
+  }
+  form {
+    $collapse: true;
+    @include grid-column(6, $collapse:true);
+    textarea {
+      height: 150px;
+    }
+  }
+
+  &[data-action="new"] {
+    #preview-field {
+      @include grid-column(5, $collapse:true, $offset: 1);
+      #preview {
+        min-height: 275px;
+        border: 5px solid $input-border-color;
+      }
+    }
+  }
+  &[data-action="show"] {
+    .actions { display: none;}
+  }
+}

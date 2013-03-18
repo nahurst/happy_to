@@ -1,20 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Data:</b>
-  <%= @mail_merge.data %>
-</p>
-
-<p>
-  <b>Subject template:</b>
-  <%= @mail_merge.subject_template %>
-</p>
-
-<p>
-  <b>Body template:</b>
-  <%= @mail_merge.body_template %>
-</p>
-
-
-<%= link_to 'Edit', edit_mail_merge_path(@mail_merge) %> |
-<%= link_to 'Back', mail_merges_path %>
+<h3>Your messages have been sent</h3>
+<p>Total sent: <%= @mail_merge.emails.count %></p>
+<%= render 'pulled_data' %>
+<%= render 'form' %>

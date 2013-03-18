@@ -1,13 +1,19 @@
-<h1>New mail_merge</h1>
+<h3>Mail Merge with Gmail and a Google Spreadsheet</h3>
 
-<%= label_tag "Google Spreadsheet URL (check published)" %>
-<%= text_field_tag :google_spreadsheet_url %>
-<%= link_to "Pull data", "", :class => "button", :id => "pull" %>
-
-<%= render 'form' %>
-
-<div id="preview">
-
+<div class="field">
+  <label name="google_spreadsheet_url">Google Spreadsheet URL (ensure it's <a href="http://support.google.com/drive/bin/answer.py?hl=en&answer=37579">published</a>)
+  <%= text_field_tag :google_spreadsheet_url %>
+  <%= link_to "Pull data", "", :class => "button", :id => "pull" %>
 </div>
 
-<%= link_to 'Back', mail_merges_path %>
+<%= render 'pulled_data' %>
+<%= render 'form' %>
+
+<div id="preview-field">
+  <label>Preview</label>
+  <div id="preview">
+
+  </div>
+</div>
+
+
