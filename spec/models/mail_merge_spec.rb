@@ -5,7 +5,6 @@ describe MailMerge do
 
     it 'should generate emails for a complete mail merge' do
       mm = create(:mail_merge)
-      mm.generate_emails("splinter@example.com")
       mm.emails.length.should == 4
 
       email = mm.emails.first

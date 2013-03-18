@@ -1,0 +1,27 @@
+<h1>Listing mail_merges</h1>
+
+<table>
+  <tr>
+    <th>Data</th>
+    <th>Subject template</th>
+    <th>Body template</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @mail_merges.each do |mail_merge| %>
+  <tr>
+    <td><%= mail_merge.data %></td>
+    <td><%= mail_merge.subject_template %></td>
+    <td><%= mail_merge.body_template %></td>
+    <td><%= link_to 'Show', mail_merge %></td>
+    <td><%= link_to 'Edit', edit_mail_merge_path(mail_merge) %></td>
+    <td><%= link_to 'Destroy', mail_merge, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Mail merge', new_mail_merge_path %>

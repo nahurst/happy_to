@@ -1,0 +1,29 @@
+<%= form_for(@mail_merge) do |f| %>
+  <% if @mail_merge.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mail_merge.errors.count, "error") %> prohibited this mail_merge from being saved:</h2>
+
+      <ul>
+      <% @mail_merge.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :data %><br />
+    <%= f.text_area :data %>
+  </div>
+  <div class="field">
+    <%= f.label :subject_template %><br />
+    <%= f.text_field :subject_template %>
+  </div>
+  <div class="field">
+    <%= f.label :body_template %><br />
+    <%= f.text_field :body_template %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
