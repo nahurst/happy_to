@@ -11,7 +11,6 @@
     </div>
   <% end %>
 
-
   <%= f.hidden_field :data %>
   <table id="pulled_data" style="display: none">
     <thead>
@@ -22,17 +21,17 @@
 
   <div class="field">
     <%= f.label :from %>
-    <%= f.text_field :from %>
+    <%= f.text_field :from, :placeholder => "you@wherever.com" %>
   </div>
   <div class="field">
-    <%= f.label :subject_template %>
-    <%= f.text_field :subject_template %>
+    <%= f.label :subject_template, "Subject template (Mustache)" %>
+    <%= f.text_field :subject_template, :placeholder => "Hi {{name}}" %>
   </div>
   <div class="field">
-    <%= f.label :body_template %>
-    <%= f.text_area :body_template %>
+    <%= f.label :body_template, "Body template (HTML + Mustache)" %>
+    <%= f.text_area :body_template, :placeholder => "Hi {{name}}, Great to see you!" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Send mail now", :class => "button" %>
   </div>
 <% end %>
