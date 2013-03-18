@@ -1,5 +1,9 @@
 <h1>New mail_merge</h1>
 
+<%= label_tag "Google Spreadsheet URL (check published)" %>
+<%= text_field_tag :google_spreadsheet_url %>
+<%= link_to "Pull data", "", :class => "button", :id => "pull" %>
+
 <%= render 'form' %>
 
 <%= link_to 'Back', mail_merges_path %>

@@ -11,17 +11,16 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :data %><br />
-    <%= f.text_area :data %>
-  </div>
+
+  <%= f.hidden_field :data %>
+
   <div class="field">
     <%= f.label :subject_template %><br />
     <%= f.text_field :subject_template %>
   </div>
   <div class="field">
     <%= f.label :body_template %><br />
-    <%= f.text_field :body_template %>
+    <%= f.text_area :body_template %>
   </div>
   <div class="actions">
     <%= f.submit %>

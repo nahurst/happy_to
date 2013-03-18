@@ -11,22 +11,24 @@ APP = {
   common: {
     init: function() {
 
-      alert("init");
     },
   },
   mail_merges: {
     'new': function() {
-      var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?key=0AuI4VolCrNFLdGF3YUVqQlRTV2ZHZ3hRVTNrQ2VMRFE&output=html';
-      Tabletop.init( { key: public_spreadsheet_url,
-                     callback: APP.mail_merges.display,
-                     simpleSheet: true } );
+      $("#pull").click(function(e) {
+        e.preventDefault();
+        var url = $("#google_spreadsheet_url").val();
+        Tabletop.init( { key: url,
+                       callback: APP.mail_merges.display,
+                       simpleSheet: true } );
+      });
     },
     'display': function(data, tabletop) {
-      for(var i = 0; i < data.length; i++) {
-        var output = Mustache.render("Say {{greeting}} to {{name}} from {{company}}", data[i]);
-        alert(output);
-      }
-      console.log(data);
+      $("#mail_merge_data").val(JSON.stringify(data));
+      //for(var i = 0; i < data.length; i++) {
+        //var output = Mustache.render("Say {{greeting}} to {{name}} from {{company}}", data[i]);
+        //alert(output);
+      //}
     }
   },
 }
