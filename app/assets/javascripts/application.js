@@ -1,6 +1,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require tabletop
+//= require mustache
 //= require_tree .
 
 $(document).foundation();
@@ -14,8 +16,17 @@ APP = {
   },
   mail_merges: {
     'new': function() {
-      alert("new");
-
+      var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?key=0AuI4VolCrNFLdGF3YUVqQlRTV2ZHZ3hRVTNrQ2VMRFE&output=html';
+      Tabletop.init( { key: public_spreadsheet_url,
+                     callback: APP.mail_merges.display,
+                     simpleSheet: true } );
+    },
+    'display': function(data, tabletop) {
+      for(var i = 0; i < data.length; i++) {
+        var output = Mustache.render("Say {{greeting}} to {{name}} from {{company}}", data[i]);
+        alert(output);
+      }
+      console.log(data);
     }
   },
 }
