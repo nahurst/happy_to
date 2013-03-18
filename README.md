@@ -26,7 +26,9 @@ receives (columns should be lower case).
 1. Grab and start the app
 
         git clone https://github.com/nahurst/happy_to.git
+        cd happy_to
         bundle install
+        rake db:migrate
         rails s
         http://localhost:3000
 
