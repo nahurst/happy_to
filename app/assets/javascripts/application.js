@@ -36,6 +36,9 @@ APP = {
       if (!data || data.length === 0) {
         alert("No spreadsheet found. Please make sure it's published.");
       }
+      else if (!data[0]["email"]) {
+        alert("Please create an email column");
+      }
       else {
         APP.google_spreadsheet_data = data;
         $("#mail_merge_data").val(JSON.stringify(data));
