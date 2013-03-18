@@ -25,10 +25,6 @@ APP = {
     },
     'display': function(data, tabletop) {
       $("#mail_merge_data").val(JSON.stringify(data));
-      //for(var i = 0; i < data.length; i++) {
-        //var output = Mustache.render("Say {{greeting}} to {{name}} from {{company}}", data[i]);
-        //alert(output);
-      //}
     }
   },
 }
