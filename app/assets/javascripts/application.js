@@ -24,7 +24,30 @@ APP = {
       });
     },
     'display': function(data, tabletop) {
-      $("#mail_merge_data").val(JSON.stringify(data));
+      if (!data || data.length === 0) {
+        alert("No spreadsheet found. Please make sure it's published.");
+      }
+      else {
+        $("#mail_merge_data").val(JSON.stringify(data));
+
+        var table = $("#pulled_data");
+        var thead = table.find("thead");
+        var tbody = table.find("tbody");
+
+        for (var key in data[0]) {
+          thead.append("<th>" + key + "</th");
+        }
+
+        for (var row in data) {
+          var cells = "";
+          for (var key in data[row]) {
+            cells += "<td>" + data[row][key] + "</td>";
+          }
+          tbody.append("<tr>" + cells + "</tr>");
+        }
+
+        table.slideDown();
+      }
     }
   },
 }
